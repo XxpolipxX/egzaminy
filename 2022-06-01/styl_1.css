@@ -1,0 +1,60 @@
+* {
+    font-family: helvetica;
+}
+
+header, footer {
+    background-color: #00838f;
+    color: white;
+    padding: 5px;
+    font-size: 130%;
+    text-align: center;
+}
+
+.lewy {
+    background-color: #efefef;
+    width: 55%;
+    float: left;
+}
+
+.pierwszy {
+    height: 150px;
+}
+
+.drugi {
+    height: 300px;
+}
+
+.prawy {
+    float: right;
+    background-color: #4fb3bf;
+    width: 45%;
+    height: 450px;
+    text-align: center;
+}
+
+footer {
+    clear: both;
+}
+
+img {
+    box-shadow: 10px 10px 7px dimgray;
+    margin: 20px;
+}
+
+table, td, th {
+    border: 1px solid #4fb3bf;
+    border-collapse: collapse;
+}
+
+table {
+    margin: auto;
+    width: 80%;
+}
+
+td, th {
+    padding: 4px;
+}
+
+tr:hover {
+    background-color: #4fb3bf;
+}
