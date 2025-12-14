@@ -10,6 +10,10 @@ header {
     height: 60px;
 }
 
+header h1 {
+    background-color: #2F180C;
+}
+
 .lewy {
     float: left;
     width: 60%;
@@ -26,6 +30,10 @@ section {
     background-color: #D0B6A8;
     text-align: center;
     padding: 30px;
+}
+
+section h2, section form, section label {
+    background-color: #D0B6A8;
 }
 
 footer {
