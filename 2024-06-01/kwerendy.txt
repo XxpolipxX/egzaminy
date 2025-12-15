@@ -1,0 +1,11 @@
+1:
+SELECT `nazwa` FROM `wycieczki` WHERE `poczatek` = "Muszyna" OR `poczatek` = "Wieliczka";
+
+2:
+SELECT `wycieczki`.`nazwa`, `wycieczki`.`opis`, `wycieczki`.`poczatek`, `zdjecia`.`zrodlo` FROM `wycieczki` JOIN `zdjecia` ON `wycieczki`.`zdjecia_id` = `zdjecia`.`id`;
+
+3:
+SELECT COUNT(`id`) FROM `wycieczki`;
+
+4:
+ALTER TABLE `wycieczki` ADD `ocena` INT;
