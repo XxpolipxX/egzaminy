@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <header>
+        <h2>Chat</h2>
+    </header>
+
+    <main>
+        <div class="chat-container">
+            <div class="wypowiedz jolanta">
+                <img src="./Jolka.jpg">
+                <p>Cześć idziesz jutro do kina?</p>
+            </div>
+    
+            <div class="wypowiedz krzysztof">
+                <img src="./Krzysiek.jpg">
+                <p>Tak! A ty?</p>
+            </div>
+        </div>
+        <label for="wiadomosc">Wpisz wiadomość: <input type="text" name="wiadomosc" id="wiadomosc"></label>
+        <button onclick="wyslij()">Wyślij</button><br>
+        <button onclick="generuj()">Generuj losową odpowiedź</button>
+    </main>
+
+    <aside>
+        <h3>Chaty</h3>
+        <ul>
+            <li>Ogólny</li>
+            <li>
+                Tematyczne
+                <ol>
+                    <li>Turystyczny</li>
+                    <li>Żeglarski</li>
+                    <li>Filatelistyczny</li>
+                    <li>Hodowla zwierzątek domowych</li>
+                </ol>
+            </li>
+        </ul>
+        <h3>Uczestnicy</h3>
+        <p>Jolanta Nowak</p>
+        <img src="./Jolka.jpg" alt="Jolanta Nowak">
+        <p>Krzysztof Łukasiński</p>
+        <img src="./Krzysiek.jpg" alt="Krzysztof Łukasiński">
+    </aside>
+
+    <footer>
+        <h5>Chat wykonał: XXXXXXXXXX</h5>
+    </footer>
+
+    <script>
+        function wyslij() {
+            let chatContainer = document.querySelector('.chat-container');
+            let nowaWiadomosc = document.getElementById("wiadomosc").value;
+            let wypowiedz = document.createElement('div');
+            let obraz = document.createElement('img');
+            obraz.src = './Jolka.jpg';
+            let tresc = document.createElement('p');
+            tresc.innerText = nowaWiadomosc;
+            wypowiedz.classList.add('wypowiedz');
+            wypowiedz.classList.add('jolanta');
+            wypowiedz.appendChild(obraz);
+            wypowiedz.appendChild(tresc);
+            chatContainer.appendChild(wypowiedz);
+            wypowiedz.scrollIntoView();
+        }
+
+        function generuj() {
+            let odpowiedzi = [
+                "Świetnie!",
+                "Kto gra główną rolę?",
+                "Lubisz filmy Tego reżysera?",
+                "Będę 10 minut wcześniej",
+                "Może kupimy sobie popcorn?",
+                "Ja wolę Colę",
+                "Zaproszę jeszcze Grześka",
+                "Tydzień temu też byłem w kinie na Diunie",
+                "Ja funduję bilety"
+            ];
+
+            let losowyIndex = Math.abs(Math.floor(Math.random() * 10) - 1);
+            let losowaOdpowiedz = odpowiedzi[losowyIndex];
+
+            let chatContainer = document.querySelector('.chat-container');
+            let wypowiedz = document.createElement('div');
+            let obraz = document.createElement('img');
+            obraz.src = './Krzysiek.jpg';
+            let tresc = document.createElement('p');
+            tresc.innerText = losowaOdpowiedz;
+            wypowiedz.classList.add('wypowiedz');
+            wypowiedz.classList.add('krzysztof');
+            wypowiedz.appendChild(obraz);
+            wypowiedz.appendChild(tresc);
+            chatContainer.appendChild(wypowiedz);
+            wypowiedz.scrollIntoView();
+        }
+    </script>
+</body>
+</html>

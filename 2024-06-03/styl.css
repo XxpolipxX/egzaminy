@@ -1,0 +1,62 @@
+* {
+    font-family: georgia;
+}
+
+header {
+    float: left;
+    background-color: navy;
+    color: white;
+    text-align: center;
+    height: 100px;
+    width: 50%;
+}
+
+nav {
+    clear: both;
+    background-color: navy;
+    padding: 20px;
+}
+
+.pole-opcji {
+    color: silver;
+    margin: 50px;
+}
+
+.pole-opcji:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+aside {
+    background-color: azure;
+    height: 550px;
+    float: left;
+}
+
+.lewy {
+    width: 70%;
+}
+
+.prawy {
+    width: 30%;
+}
+
+footer {
+    clear: both;
+    background-color: navy;
+    color: white;
+}
+
+table {
+    border: 1px solid navy;
+    margin: auto;
+    width: 70%;
+}
+
+tr:hover {
+    background-color: skyblue;
+}
+
+.prawy img {
+    width: 90%;
+}
