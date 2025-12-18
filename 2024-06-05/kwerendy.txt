@@ -1,0 +1,10 @@
+1:
+SELECT `nazwa` FROM `marki`;
+
+2:
+SELECT `model`, `rocznik`, `przebieg`, `paliwo`, `cena`, `zdjecie` FROM `samochody` WHERE `id` = 10;
+
+3:
+SELECT `marki`.`nazwa`, `samochody`.`model`, `samochody`.`rocznik`, `samochody`.`cena`, `samochody`.`zdjecie` FROM `marki` JOIN `samochody` ON `marki`.`id` = `samochody`.`marki_id` WHERE `samochody`.`wyrozniony` = 1 LIMIT 4;
+4:
+SELECT `samochody`.`model`, `samochody`.`cena`, `samochody`.`zdjecie` FROM `samochody`, `marki` WHERE `samochody`.`marki_id` = `marki`.`id` AND `marki`.`nazwa` = "Audi";
