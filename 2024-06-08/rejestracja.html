@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Sklep - rejestracja</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <aside>
+        <img src="./obraz.png" alt="promocje">
+        <h2>Sprawdź promocje</h2>
+        <table>
+            <tr>
+                <th>co?</th>
+                <th>ile taniej?</th>
+            </tr>
+            <tr>
+                <td>ubrania</td>
+                <td>15%</td>
+            </tr>
+            <tr>
+                <td>buty</td>
+                <td>25%</td>
+            </tr>
+        </table>
+    </aside>
+
+    <header>
+        <h1>Zarejestruj się w sklepie</h1>
+    </header>
+
+    <main>
+        <button onclick="nastepny(1)">Klient</button>
+        <button onclick="nastepny(2)">Adres</button>
+        <button onclick="nastepny(3)">Kontakt</button>
+
+        <div id="blok1">
+            <p>Imię <input type="text" name="imie" id="imie" placeholder="Wpisz dane..."></p>
+            <p>Nazwisko <input type="text" name="nazwisko" id="nazwisko"></p>
+            <p>Data urodzenia <input type="date" name="data" id="data"></p>
+        </div>
+
+        <div class="hide" id="blok2">
+            <p>Ulica <input type="text" name="ulica" id="ulica"></p>
+            <p>Numer <input type="text" name="numer" id="numer"></p>
+            <p>Miasto <input type="text" name="miasto" id="miasto"></p>
+        </div>
+
+        <div class="hide" id="blok3">
+            <p>Numer komórkowy <input type="tel" name="telefon" id="telefon"></p>
+            <p><input type="checkbox" name="rodo" id="rodo"> Akceptuję RODO</p>
+            <button onclick="zatwierdz()">Zatwierdź dane</button>
+        </div>
+    </main>
+
+    <section id="progress" class="progress">
+        <section id="pasek-postepu"></section>
+    </section>
+
+    <footer>
+        <h4>Rejestrację do sklepu wykonał: XXXXXXXXX</h4>
+    </footer>
+
+    <script>
+        let blok1 = document.getElementById('blok1');
+        let blok2 = document.getElementById('blok2');
+        let blok3 = document.getElementById('blok3');
+
+        function nastepny(numerBloku) {
+            if(numerBloku == 1) {
+                blok1.classList.add('hide');
+                blok2.classList.add('hide');
+                blok3.classList.add('hide');
+                blok1.classList.remove('hide');
+            } else if(numerBloku == 2) {
+                blok1.classList.add('hide');
+                blok2.classList.add('hide');
+                blok3.classList.add('hide');
+                blok2.classList.remove('hide');
+            } else if(numerBloku == 3) {
+                blok1.classList.add('hide');
+                blok2.classList.add('hide');
+                blok3.classList.add('hide');
+                blok3.classList.remove('hide');
+            }
+        }
+
+        let szerokosc = 4;
+        let polaEdycyjne = document.querySelectorAll('input');
+        polaEdycyjne.forEach(pole => {
+            pole.addEventListener('focusout', () => {
+                szerokosc += 12;
+                if(szerokosc >= 100) {
+                    szerokosc = 100;
+                }
+                document.getElementById('pasek-postepu').style.width = szerokosc + "%";
+            });
+        });
+
+        function zatwierdz() {
+            let napis = '';
+            polaEdycyjne.forEach(pole => {
+                napis += pole.value + ", ";
+            });
+            napis = napis.slice(0, -2);
+            console.log(napis);
+        }
+    </script>
+</body>
+</html>
