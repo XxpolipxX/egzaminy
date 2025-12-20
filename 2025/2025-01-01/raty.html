@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Kursy komputerowe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="./baner.png" alt="kursy komputerowe">
+    </header>
+
+    <nav>
+        <a href="./index.html">Strona główna</a>
+        <a href="./raty.html">Koszt rat</a>
+        <a href="https://moje-szkolenia.pl">Nasz partner</a>
+    </nav>
+
+    <main>
+        <h3>Oblicz miesiączną ratę</h3>
+        <label for="react"><input type="checkbox" name="react" id="react" value="5000" class="kontrolki">Kurs React.js</label><br>
+        <label for="javascript"><input type="checkbox" name="javascript" id="javascript" value="3000" class="kontrolki">Kurs JavaScript</label><br>
+        <label for="ile-rat">Liczba rat: <input type="number" name="ile-rat" id="ile-rat" class="kontrolki"></label><br>
+        <select name="miasto" id="miasto" class="kontrolki">
+            <option value="Warszawa">Warszawa</option>
+            <option value="Katowice">Katowice</option>
+            <option value="Gdańsk">Gdańsk</option>
+        </select><br>
+        <button onclick="oblicz()" class="kontrolki">Oblicz</button>
+        <p id="wynik"></p>
+    </main>
+
+    <footer>
+        <p>Autor strony: XXXXXXXXXXXX</p>
+    </footer>
+
+    <script>
+        function oblicz() {
+            let react = document.getElementById("react");
+            let javaScript = document.getElementById("javascript");
+            let miasto = document.getElementById("miasto").value;
+            let ileRat = parseInt(document.getElementById("ile-rat").value);
+
+            let cena = 0;
+            if(react.checked) cena += parseInt(react.value);
+            if(javaScript.checked) cena += parseInt(javaScript.value);
+
+            let cenaZaRate = cena / ileRat;
+            document.getElementById("wynik").innerHTML = "Kurs odbędzie się w " + miasto + ". Koszt całkowity: " + cena + " zł. Płacisz " + ileRat + " rat po " + cenaZaRate + " zł";
+        }
+    </script>
+</body>
+</html>
