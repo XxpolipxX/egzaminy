@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Biuro turystyczne</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <header>
+        <h1>Zwiedzamy Polskę</h1>
+    </header>
+
+    <aside class="lewy">
+        <button onclick="poprzednie()">&lt;</button>
+    </aside>
+
+    <section>
+        <img src="./1.jpg" alt="Aktywne zdjęcie" id="obraz">
+    </section>
+
+    <aside class="prawy">
+        <button onclick="nastepne()">&gt;</button>
+    </aside>
+
+    <nav>
+        <img src="./1.jpg" alt="Gdańsk">
+        <img src="./2.jpg" alt="Kraków">
+        <img src="./3.jpg" alt="Niedzica">
+        <img src="./4.jpg" alt="Pieniny">
+        <img src="./5.jpg" alt="Szklarska Poręba">
+        <img src="./6.jpg" alt="Tatry">
+        <img src="./7.jpg" alt="Wrocław">
+    </nav>
+
+    <footer>
+        <h3>Autorem galerii jest:</h3>
+        <p>XXXXXXXXXXX</p>
+        <a href="http://pixabat.com" target="_blank">Więcej zdjęć</a>
+    </footer>
+
+    <script>
+        let obrazGlowny = document.getElementById('obraz');
+        let zdjecie = 1;
+
+        function poprzednie() {
+            zdjecie--;
+            if(zdjecie < 1) {
+                zdjecie = 7;
+            }
+            obrazGlowny.src = zdjecie + '.jpg';
+        }
+
+        function nastepne() {
+            zdjecie++;
+            if(zdjecie > 7) {
+                zdjecie = 1;
+            }
+            obrazGlowny.src = zdjecie + '.jpg';
+        }
+    </script>
+</body>
+</html>

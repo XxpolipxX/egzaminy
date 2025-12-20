@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Efekty obrazy</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <header>
+        <h2>Efekty na obrazach</h2>
+    </header>
+
+    <section>
+        <img src="./pszczola.jpg" alt="pszczoła na fioletowym kwiatku" id="pszczola"><br>
+        <label for="blur"><input type="radio" name="opcje1" value="blur" id="blur"> Blur</label><br>
+        <label for="sepia"><input type="radio" name="opcje1" value="sepia" id="sepia"> Sepia</label><br>
+        <label for="negatyw"><input type="radio" name="opcje1" value="negatyw" id="negatyw"> Negatyw</label><br>
+        <button onclick="transformacja()">Zastosuj</button>
+    </section>
+
+    <section>
+        <img src="./pomarancza.jpg" alt="drzewo pomarańczy" id="pomarancza"><br>
+        <button onclick="kolorowy()">Kolorowy</button>
+        <button onclick="czarnoBialy()">Czarno-biały</button>
+    </section>
+
+    <section>
+        <img src="./owoce.jpg" alt="Kosz pełen owoców" id="owoce">
+        <input type="range" name="przezroczystosc" id="przezroczystosc" min="0" value="100" max="100"><br>
+        <button onclick="przezroczystosc()">Zastosuj</button>
+    </section>
+
+    <section>
+        <img src="./zolw.jpg" alt="Żółw w wodzie" id="zolw">
+        <input type="range" name="jasnosc" id="jasnosc" min="0" max="250"><br>
+        <button onclick="jasnosc()">Zastosuj</button>
+    </section>
+
+    <footer>
+        <p><a href="http://www.css.com/">Zobacz inne efekty obrazu</a></p>
+        <p>Stronę wykonał: XXXXXXXX</p>
+    </footer>
+
+    <script>
+        let obrazPszczoly = document.getElementById("pszczola");
+        let obrazPomaranczy = document.getElementById("pomarancza");
+        let obrazOwocow = document.getElementById("owoce");
+        let obrazZolwia = document.getElementById("zolw");
+        let blur = document.getElementById("blur");
+        let sepia = document.getElementById("sepia");
+        let negatyw = document.getElementById("negatyw");
+        let przezroczystoscWartosc = document.getElementById("przezroczystosc");
+        let jasnoscWartosc = document.getElementById("jasnosc");
+
+        function transformacja() {
+            if(blur.checked) {
+                obrazPszczoly.style.filter = 'blur(6px)';
+            }
+            if(sepia.checked) {
+                obrazPszczoly.style.filter = 'sepia(100%)';
+            }
+            if(negatyw.checked) {
+                obrazPszczoly.style.filter = 'invert(100%)';
+            }
+        }
+
+        function kolorowy() {
+            obrazPomaranczy.style.filter = '';
+        }
+
+        function czarnoBialy() {
+            obrazPomaranczy.style.filter = 'grayscale(100%)';
+        }
+
+        function przezroczystosc() {
+            obrazOwocow.style.filter = 'opacity(' + przezroczystoscWartosc.value + '%)';
+        }
+
+        function jasnosc() {
+            obrazZolwia.style.filter = 'brightness(' + jasnoscWartosc.value + '%)';
+        }
+    </script>
+</body>
+</html>

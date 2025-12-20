@@ -1,0 +1,76 @@
+* {
+    font-family: georgia;
+    color: white;
+}
+
+header, footer {
+    background-color: maroon;
+    text-align: center;
+    padding: 2px;
+}
+
+aside, section {
+    float: left;
+    background-color: lightsalmon;
+    height: 527px;
+}
+
+aside {
+    width: 15%;
+}
+
+section {
+    width: 70%;
+}
+
+nav {
+    clear: both;
+    background-color: maroon;
+    height: 70px;
+}
+
+button {
+    background-color: lightsalmon;
+    color: maroon;
+    border: none;
+    font-size: 400%;
+    display: block;
+    margin: auto;
+    padding-top: 210px;
+}
+
+nav img {
+    height: 70px;
+    animation-name: miniatury;
+    animation-duration: 4s;
+}
+
+@keyframes miniatury {
+    from {
+        padding-left: 50px;
+    }
+    to {
+        padding-left: 0;
+    }
+}
+
+section img {
+    display: block;
+    margin: auto;
+    padding: 45px;
+}
+
+section img:hover {
+    animation-name: obraz-glowny;
+    animation-duration: 5s;
+    transform: scale(120%);
+}
+
+@keyframes obraz-glowny {
+    from {
+        transform: scale(100%);
+    }
+    to {
+        transform: scale(120%);
+    }
+}

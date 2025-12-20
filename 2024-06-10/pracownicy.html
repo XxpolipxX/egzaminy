@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Nasz zespół</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <header>
+        <img src="./logo.png" alt="logo firmy">
+    </header>
+
+    <header>
+        <h1>Nasz zespół</h1>
+    </header>
+
+    <main>
+        <div>
+            <img src="./osoba1.jpg" alt="Dyrektor">
+            <h2>Krzysztof Dobromilski</h2>
+            <h3>Dyrektor</h3>
+            <p>Firma logistyczna była jego marzeniem. Zrealizował je 10 lat temu. Nasza firma prosperuje dzięki Krzysztofowi</p>
+            <p>telefon: 111222333</p>
+            <a href="mailto:Krzysztof.Dobromilski@firma.pl"><h5>Kontakt</h5></a>
+        </div>
+        <div>
+            <img src="./osoba2.jpg" alt="Kierownik logistyków">
+            <h2>Joanna Trojanowska</h2>
+            <h3>Kierownik logistyków</h3>
+            <p>Od początku firmy z nami. Wie jak zorganizować pracę swoich logistyków aby wszystko było na czas</p>
+            <p>telefon: 222333444</p>
+            <a href="mailto:Ewa.Nowak@firma.pl"><h5>Kontakt</h5></a>
+        </div>
+        <div>
+            <img src="./osoba3.jpg" alt="Kadry">
+            <h2>Ewa Nowak</h2>
+            <h3>Księgowość i kadry</h3>
+            <p>Od lat finanse powierzamy niezawodnej Ewie. Twardą ręką trzyma kasę i dba o wszystkich pracowników</p>
+            <p>telefon: 333444555</p>
+            <a href="mailto:Ewa.Nowak@firma.pl"><h5>Kontakt</h5></a>
+        </div>
+    </main>
+
+    <section>
+        <blockquote class="block" onclick="pokaz(1)" id="cytat1">
+            "Każdego dnia stawiam sobie nieosiągalne wyzwania i próbuję je wykonać"
+            <p>- Krzysztof</p>
+        </blockquote>
+        <blockquote class="hide" onclick="pokaz(2)" id="cytat2">
+            "Nie bój się porażek, im więcej ich rozwiążesz, tym szybciej osiągniesz cel"
+            <p>- Joanna</p>
+        </blockquote>
+        <blockquote class="hide" onclick="pokaz(3)" id="cytat3">
+            "Niezadowolony pracownik jest dla mnie źródłem nauki"
+            <p>- Ewa</p>
+        </blockquote>
+    </section>
+
+    <footer>
+        <p>Stronę wykonał: XXXXXXXXX</p>
+    </footer>
+
+    <script>
+        let cytat1 = document.getElementById('cytat1');
+        let cytat2 = document.getElementById('cytat2');
+        let cytat3 = document.getElementById('cytat3');
+        function pokaz(numer) {
+            cytat1.classList.add('hide');
+            cytat2.classList.add('hide');
+            cytat3.classList.add('hide');
+            cytat1.classList.remove('block');
+            cytat2.classList.remove('block');
+            cytat3.classList.remove('block');
+            if(numer == 1) {
+                cytat2.classList.remove('hide');
+                cytat2.classList.add('block');
+            } else if(numer == 2) {
+                cytat3.classList.remove('hide');
+                cytat3.classList.add('block');
+            } else if(numer == 3) {
+                cytat1.classList.remove('hide');
+                cytat1.classList.add('block');
+            }
+        }
+    </script>
+</body>
+</html>
