@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Montaż paneli podłogowych</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="./montaz_paneli.png" alt="firma usługowa">
+    </header>
+
+    <nav>
+        <a href="./index.html">Strona Główna</a>
+        <a href="./oferta.html">Oferta</a>
+        <a href="./koszty.html">Kalkulator kosztów</a>
+    </nav>
+
+    <main>
+        <h1>Kalkulator kosztów montażu</h1>
+        <label for="szerokosc">Szerokość pomieszczenia [m]: <input type="text" name="szerokosc" id="szerokosc"></label>
+        <label for="dlugosc">Długość pomieszczenia [m]: <input type="text" name="dlugosc" id="dlugosc"></label>
+        <p>Typ panelu</p>
+        <label for="laminowane"><input type="radio" name="typ" id="laminowane">Panele laminowane</label><br>
+        <label for="winylowe"><input type="radio" name="typ" id="winylowe">Panele winylowe</label><br>
+        <label for="deska"><input type="radio" name="typ" id="deska">Deska podłogowa</label><br>
+        <button onclick="oblicz()">Oblicz</button>
+        <p id="wynik"></p>
+    </main>
+
+    <footer>
+        <h5>Autor strony: XXXXXXXXX</h5>
+    </footer>
+
+    <script>
+        function oblicz() {
+            let szerokosc = parseInt(document.getElementById("szerokosc").value);
+            let dlugosc = parseInt(document.getElementById("dlugosc").value);
+            if(!isNaN(szerokosc) && !isNaN(dlugosc)) {
+                let pole = szerokosc * dlugosc;
+                let laminowane = document.getElementById("laminowane");
+                let winylowe = document.getElementById("winylowe");
+                let deska = document.getElementById("deska");
+                let kosztZaMetr = 0;
+                if(laminowane.checked) kosztZaMetr = 12;
+                if(winylowe.checked) kosztZaMetr = 14;
+                if(deska.checked) kosztZaMetr = 18;
+                let cena = pole * kosztZaMetr;
+                document.getElementById("wynik").innerHTML = "Pole powierzchni pomieszczenia: " + pole + ", koszt montażu " + cena;
+            } else {
+                document.getElementById("wynik").innerHTML = "Wprowadź poprawne dane.";
+            }
+        }
+    </script>
+</body>
+</html>
