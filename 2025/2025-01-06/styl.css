@@ -1,0 +1,54 @@
+body {
+    font-family: georgia;
+    color: white;
+}
+
+header, footer {
+    background-color: #824555;
+    text-align: center;
+    padding: 20px;
+}
+
+.lewy, section {
+    float: left;
+    width: 30%;
+    height: 350px;
+}
+
+.lewy {
+    background-color: #a26475;
+}
+
+section {
+    background-color: #824555;
+}
+
+.prawy {
+    float: left;
+    background-color: #a26470;
+    width: 40%;
+    height: 350px;
+    overflow: auto;
+}
+
+img {
+    float: left;
+    width: 50px;
+}
+
+table, p, dt {
+    margin: 10px;
+}
+
+dt {
+    padding-top: 20px;
+}
+
+td, th {
+    border: 3px solid #824555;
+    padding: 5px;
+}
+
+footer {
+    clear: both;
+}
